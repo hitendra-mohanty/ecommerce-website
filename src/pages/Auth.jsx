@@ -28,7 +28,6 @@ export default function Auth() {
             setError(result.message);
         }
 
-        console.log(result);
     }
     return (
         <div className="page">
