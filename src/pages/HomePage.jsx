@@ -15,8 +15,9 @@ export default function HomePage() {
         <div className="container">
           <h2 className="page-title">Our Products</h2>
           <div className="product-grid">
+          {/* Map through the products and render a ProductCard for each product */}
           {products.map((product) => (
-            <ProductCard product={product} key={product.id} />
+            <ProductCard product={product} key={product.id} /> 
           ))}
         </div>
         </div>

@@ -4,16 +4,22 @@ import { AuthContext } from "../context/AuthContext";
 import { useNavigate } from "react-router-dom";
 
 export default function Auth() {
+// State to toggle between signup and login modes    
     const [mode, setMode] = useState("signup");
 
+// State to hold error messages
     const [error,setError] = useState(null);
 
+// Initialize navigation
     const navigate = useNavigate();
 
-    const { signUp, user, logOut, logIn } = useContext(AuthContext);
+// Get authentication functions from context
+    const { signUp,  logIn } = useContext(AuthContext);
 
+// Initialize form handling with react-hook-form    
     const { register, handleSubmit, formState: { errors } } = useForm();
 
+ // Handle form submission for both signup and login   
     function onSubmit(data){
         setError(null);
         let result ;
@@ -34,8 +40,6 @@ export default function Auth() {
            <div className="container">
 
             <div className="auth-container">
-                {user && <div className="welcome-message">Welcome, {user.email}!</div>}
-                <button onClick={() => logOut()}>Logout</button>
                 <h1 className="page-title">
                     {mode === "signup" ? "Sign Up" : "Log In "}
                 </h1>
