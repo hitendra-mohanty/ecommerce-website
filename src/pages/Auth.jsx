@@ -38,12 +38,12 @@ export default function Auth() {
     return (
         <div className="page">
            <div className="container">
-
+          {/*Authentication form container*/} 
             <div className="auth-container">
                 <h1 className="page-title">
                     {mode === "signup" ? "Sign Up" : "Log In "}
                 </h1>
-
+            {/*Authentication form with validation and error handling*/}
                 <form className="auth-form" onSubmit={handleSubmit(onSubmit)}>
 
                     {error && <div className="error-message">{error}</div>}
@@ -54,7 +54,7 @@ export default function Auth() {
                         {errors.email && <span className="form-error">{errors.email.message}</span>}
                     </div>
 
-
+                {/*// Password field with validation rules */}
                     <div className="form-group">
                         <label htmlFor="password" className="form-label">Password</label>
                         <input type="password" id="password" name="password" 
@@ -65,17 +65,18 @@ export default function Auth() {
                         })} className="form-input"/>
                         {errors.password && <span className="form-error">{errors.password.message}</span>}
                     </div>
-                    
+                {/*Submit button that changes text based on the current mode (signup or login) */} 
                     <button className="btn btn-primary" type="submit">
                         {mode === "signup" ? "Sign Up" : "Log In"}
                     </button>
                 </form>
-
+                <hr />
+                {/* Switch between signup and login modes */}
                 <div className="auth-switch">
                     {mode === "signup" ? (
-                        <p>Don't have an account? <span className="auth-link" onClick={() => setMode("login")}>Log In</span></p>
+                        <p>Don't have an account? <button className="auth-link" onClick={() => setMode("login")}>Log In</button></p>
                     ) : (
-                        <p>Already have an account? <span className="auth-link" onClick={() => setMode("signup")}>Sign Up</span></p>
+                        <p>Already have an account? <button className="auth-link" onClick={() => setMode("signup")}>Sign Up</button></p>
                     )}
                 </div>
             </div>

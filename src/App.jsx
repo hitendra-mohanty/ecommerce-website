@@ -8,10 +8,12 @@ import ProductDetails from './pages/ProductDetails';
 import Navbar from './components/Navbar';
 import AuthProvider from './context/AuthContext';
 import NotFoundPage from './pages/NotFoundPage';
+import CartProvider from './context/CartContext';
 
 const App = () => {
   return (
     <AuthProvider>
+      <CartProvider>
       <div>
         <Navbar />
         <Routes>
@@ -22,6 +24,7 @@ const App = () => {
           <Route path='*' element={<NotFoundPage />} />
         </Routes>
       </div>
+       </CartProvider>
     </AuthProvider>
   )
 }
