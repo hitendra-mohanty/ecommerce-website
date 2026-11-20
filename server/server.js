@@ -21,7 +21,7 @@ app.use("/api", (_req, res) => res.status(404).json({ message: "Not found" }));
 
 // In production the Express server also serves the built React app
 if (process.env.NODE_ENV === "production") {
-  const dist = path.join(__dirname, "../client/dist");
+  const dist = path.join(__dirname, "../dist");
   app.use(express.static(dist));
   app.get("*", (_req, res) => res.sendFile(path.join(dist, "index.html")));
 }
