@@ -1,4 +1,4 @@
-# ecommerce-website-main
+# Ecommerce-website-main
 
 A full-stack e-commerce web application that allows users to browse products, add items to their shopping cart, and manage their purchases. The platform supports two types of accounts: Users and Sellers, each with their own functionalities.
 
