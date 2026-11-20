@@ -3,13 +3,25 @@
 ##
 ## Get latest from https://github.com/github/gitignore/blob/main/VisualStudio.gitignore
 
+
+# Environment variables — NEVER commit these
+.env
+.env.local
+.env.development
+.env.production
+.env.*.local
+
+# But DO commit the template so teammates know what variables to set
+!.env.example   
+
+
 # User-specific files
 *.rsuser
 *.suo
 *.user
 *.userosscache
 *.sln.docstates
-.env
+
 
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
